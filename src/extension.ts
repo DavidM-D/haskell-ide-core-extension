@@ -17,14 +17,13 @@ export function activate(context: ExtensionContext) {
 		window.showErrorMessage("You must specify a hic.executionPath in config");
 		return;
 	}
-	let command = cPath; //context.asAbsolutePath(cPath);
-	let args : string[] = ["--ide", config.get("arguments") as string];
+	let command = cPath;
+	let args : string[] = ["--ide", ".ghci", config.get("arguments") as string];
 
 	let clientOptions: LanguageClientOptions = {
 		// Register the server for plain text documents
 		documentSelector: ["haskell"]
 	};
-
 	let client2 = new LanguageClient( 
 		'haskell',
 		'Haskell IDE Core',
