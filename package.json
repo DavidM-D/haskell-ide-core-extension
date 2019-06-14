@@ -17,14 +17,13 @@
 		"languages": [{
 			"id": "haskell",
 			"extensions": [
-				".hs"
+				"hs"
 			]
 		}],
 		"grammars": [
 			{
 				"language": "haskell",
-				"scopeName": "source.hs",
-				"extensions": ".hs",
+				"s.copeName": "source.hs",
 				"path": "./syntaxes/Haskell.tmLanguage."
 			}],
 		"configuration": {

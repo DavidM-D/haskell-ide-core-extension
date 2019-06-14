@@ -18,7 +18,7 @@ export function activate(context: ExtensionContext) {
 		return;
 	}
 	let command = cPath; //context.asAbsolutePath(cPath);
-	let args : string[] = [config.get("arguments") as string];
+	let args : string[] = ["--ide", config.get("arguments") as string];
 
 	let clientOptions: LanguageClientOptions = {
 		// Register the server for plain text documents
@@ -26,7 +26,7 @@ export function activate(context: ExtensionContext) {
 	};
 
 	let client2 = new LanguageClient( 
-		'haskell-ide-core',
+		'haskell',
 		'Haskell IDE Core',
 		{ args: args, command: command, options: {cwd: workspace.rootPath }}, clientOptions, true);
 	
