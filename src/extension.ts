@@ -17,8 +17,9 @@ export function activate(context: ExtensionContext) {
 		window.showErrorMessage("You must specify a hic.executionPath in config");
 		return;
 	}
-	let command = cPath;
-	let args : string[] = ["--ide", ".ghci", config.get("arguments") as string];
+	let argString = config.get("arguments") as string;
+
+	let args : string[] = argString.split(" ");
 
 	let clientOptions: LanguageClientOptions = {
 		// Register the server for plain text documents
@@ -27,7 +28,7 @@ export function activate(context: ExtensionContext) {
 	let client2 = new LanguageClient( 
 		'haskell',
 		'Haskell IDE Core',
-		{ args: args, command: command, options: {cwd: workspace.rootPath }}, clientOptions, true);
+		{ args: args, command: cPath, options: {cwd: workspace.rootPath }}, clientOptions, true);
 	
 	client2.start();
 }

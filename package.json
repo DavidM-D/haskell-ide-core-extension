@@ -31,7 +31,7 @@
 			"properties": {
 				"hic.executablePath": {
 					"type": "string",
-					"default": "",
+					"default": "--ide .ghci",
 					"description": "The location of your haskell-ide-core executable"
 				},
 				"hic.arguments": {
