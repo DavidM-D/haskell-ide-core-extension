@@ -23,7 +23,7 @@
 		"grammars": [
 			{
 				"language": "haskell",
-				"s.copeName": "source.hs",
+				"scopeName": "source.hs",
 				"path": "./syntaxes/Haskell.tmLanguage."
 			}],
 		"configuration": {
