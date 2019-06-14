@@ -18,7 +18,7 @@ export function activate(context: ExtensionContext) {
 		return;
 	}
 	let command = cPath; //context.asAbsolutePath(cPath);
-	let args : string[] = [];
+	let args : string[] = [config.get("arguments") as string];
 
 	let clientOptions: LanguageClientOptions = {
 		// Register the server for plain text documents
@@ -31,24 +31,6 @@ export function activate(context: ExtensionContext) {
 		{ args: args, command: command, options: {cwd: workspace.rootPath }}, clientOptions, true);
 	
 	client2.start();
-
-	// If the extension is launched in debug mode then the debug server options are used
-	// Otherwise the run options are used
-
-
-	// Options to control the language client
-
-	// Create the language client and start the client.
-	// client = new LanguageClient(
-	// 	'haskell-ide-core',
-	// 	'Haskell IDE Core',
-	// 	serverOptions,
-	// 	clientOptions
-	// );
-
-
-	// Start the client. This will also launch the server
-	// client.start();
 }
 
 export function deactivate(): Thenable<void> | undefined {
