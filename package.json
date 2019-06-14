@@ -20,11 +20,10 @@
 				"hs"
 			]
 		}],
-		"grammars": [
-			{
-				"language": "haskell",
-				"scopeName": "source.hs",
-				"path": "./syntaxes/Haskell.tmLanguage."
+		"grammars": [{
+                "language": "haskell",
+                "scopeName": "source.haskell",
+                "path": "./syntaxes/haskell.tmLanguage"
 			}],
 		"configuration": {
 			"type": "object",
